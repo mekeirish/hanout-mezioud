@@ -24,8 +24,8 @@
   function App() {
 
     // ---- CONSTANTES INJECTÉES PAR LE FORKEUR ----
-    const VENDOR = "{{VENDOR}}";
-    const PASSWORD_HASH = "{{PASSWORD_HASH}}";
+    const VENDOR = "mezioud";
+    const PASSWORD_HASH = "4f9f10b304cfe9b2b11fcb1387f694e18f08ea358c7e9f567434d3ad6cbd7fc4";
 
     // ---- DÉDUCTION AUTOMATIQUE DU VENDEUR (AVEC FALLBACK) ----
     const params = new URLSearchParams(window.location.search);
@@ -35,8 +35,8 @@
     // Priorité : paramètre URL > déduction automatique > localStorage > CONSTANTE VENDOR
     const vendeur = params.get("vendeur") || deducedVendor || localStorage.getItem("vendeur_name") || VENDOR;
 
-    // Si VENDOR est encore "{{VENDOR}}" (non remplacé), on considère qu'il n'y a pas de vendeur
-    const isPlaceholder = VENDOR === "{{VENDOR}}";
+    // Si VENDOR est encore "mezioud" (non remplacé), on considère qu'il n'y a pas de vendeur
+    const isPlaceholder = VENDOR === "mezioud";
 
     // ---- TOKEN DÉDIÉ (demandé uniquement quand nécessaire) ----
     let MASTER_TOKEN = null;
